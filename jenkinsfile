@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Source') { 
       steps {
-			// Some Step
+			// Checkout code 
+			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/ShrutiBhatt09/jenkins2-course-spring-boot']]])
       
       }
     }
